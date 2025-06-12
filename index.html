@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アソープ（応用情報カード）</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      color: #0066cc;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question {
+      font-weight: bold;
+    }
+    .answer {
+      margin-top: 0.5rem;
+      display: none;
+    }
+    button {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>アソープ（応用情報 暗記カード）</h1>
+  <div class="card">
+    <div class="question">ゼロトラスト</div>
+    <div class="answer">全てのアクセスを信頼せず、常に検証するセキュリティモデル。</div>
+    <button onclick="toggle(this)">答えを見る</button>
+  </div>
+  <div class="card">
+    <div class="question">SBOM（Software Bill of Materials）</div>
+    <div class="answer">ソフトウェアを構成する全コンポーネントのリスト。</div>
+    <button onclick="toggle(this)">答えを見る</button>
+  </div>
+  <script>
+    function toggle(btn) {
+      const answer = btn.previousElementSibling;
+      answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+    }
+    window.onload = () => {
+      document.querySelectorAll('.answer').forEach(a => a.style.display = 'none');
+    };
+  </script>
+</body>
+</html>
